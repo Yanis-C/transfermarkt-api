@@ -8,6 +8,7 @@ from app.services.players.jersey_numbers import TransfermarktPlayerJerseyNumbers
 from app.services.players.market_value import TransfermarktPlayerMarketValue
 from app.services.players.most_valuable import TransfermarktPlayerMostValuable
 from app.services.players.profile import TransfermarktPlayerProfile
+from app.services.players.record_values import TransfermarktPlayerRecordValues
 from app.services.players.search import TransfermarktPlayerSearch
 from app.services.players.stats import TransfermarktPlayerStats
 from app.services.players.transfers import TransfermarktPlayerTransfers
@@ -27,6 +28,11 @@ def search_players(page_number: Optional[int] = 1):
     found_players = tfmkt.search_players()
     return found_players
 
+@router.get("/record_values")
+def search_players(page_number: Optional[int] = 1):
+    tfmkt = TransfermarktPlayerRecordValues(page_number=page_number)
+    found_players = tfmkt.search_players()
+    return found_players
 
 @router.get("/{player_id}/profile")
 def get_player_profile(player_id: str):

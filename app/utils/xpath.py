@@ -70,6 +70,16 @@ class Players:
         CLUB_NAME = ".//td[@class='zentriert'][4]//img//@title"
         CLUB_IMAGE = ".//td[@class='zentriert'][4]//img//@src"
 
+    class RecordValues:
+        FOUND = "//text()"
+        BASE = "//div[@class='box'][h2[contains(text(), 'market values')]]"
+        RESULTS = BASE + "//tbody//tr[@class='odd' or @class='even']"
+        RANK = ".//td[@class='zentriert'][1]//text()"
+        CLUB_NAME = ".//td[@class='zentriert'][3]//img//@title"
+        CLUB_IMAGE = ".//td[@class='zentriert'][3]//img//@src"
+        DATE_RECORD = ".//td[contains(@class,'zentriert')][4]//text()"
+        MARKET_VALUE = ".//td[contains(@class, 'rechts hauptlink')]//text()"
+
     class MarketValue:
         URL = "//a[@class='data-header__market-value-wrapper']//@href"
         CURRENT = (
