@@ -61,6 +61,15 @@ class Players:
         NATIONALITIES = ".//img[@class='flaggenrahmen']/@title"
         MARKET_VALUE = ".//td[@class='rechts hauptlink']//text()"
 
+    class MostValuable:
+        FOUND = "//text()"
+        BASE = "//div[@class='box'][h1[contains(text(), 'players')]]"
+        RESULTS = BASE + "//tbody//tr[@class='odd' or @class='even']"
+        RANK = ".//td[@class='zentriert'][1]//text()"
+        AGE = ".//td[@class='zentriert'][2]//text()"
+        CLUB_NAME = ".//td[@class='zentriert'][4]//img//@title"
+        CLUB_IMAGE = ".//td[@class='zentriert'][4]//img//@src"
+
     class MarketValue:
         URL = "//a[@class='data-header__market-value-wrapper']//@href"
         CURRENT = (
